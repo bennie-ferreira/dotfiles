@@ -56,7 +56,3 @@ if [ -d "$ASCII_DIR" ]; then
   FILE=$(find "$ASCII_DIR" -type f | shuf -n 1)
   [ -f "$FILE" ] && sh "$FILE"
 fi
-
-# bun
-export BUN_INSTALL="$HOME/.local/share/reflex/bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
