@@ -1,0 +1,117 @@
+# =========================
+# STARSHIP CONFIG
+# =========================
+
+format = """$localip$username$directory$git_branch$git_state$python$rust$nodejs$docker_context$dart$aws$conda$memory_usage$nix_shell$package$php$ruby$scala$java$julia$shlvl$swift$cmd_duration$character"""
+
+[localip]
+ssh_only = false
+format = '📟 [$localipv4](bold red) '
+disabled = false
+
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "👤 [$user]($style) "
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '🏠 [$hostname](bold yellow) '
+trim_at = "."
+disabled = false
+
+[directory]
+read_only = " 🔒"
+truncation_length = 10
+truncate_to_repo = true
+style = "bold italic blue"
+
+[git_branch]
+symbol = "🌿 "
+format = "[$symbol$branch]($style) "
+style = "bold green"
+
+[git_state]
+format = "[$state]($style) "
+style = "bold red"
+
+[python]
+symbol = "🐍 "
+format = 'via [${symbol} v${version} (\($virtualenv\))]($style) '
+style = "bold yellow"
+pyenv_prefix = "venv "
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+detect_extensions = ["py"]
+version_format = "v${raw}"
+
+[rust]
+symbol = "🦀 "
+format = "[$symbol]($style) "
+style = "bold red"
+
+[nodejs]
+symbol = "🟢 "
+format = "via [$symbol Node.js $version]($style) "
+style = "bold green"
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
+
+[docker_context]
+symbol = "🐳 "
+format = "via [$symbol$context]($style) "
+style = "blue bold"
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+disabled = false
+
+[dart]
+symbol = "🎯 "
+
+[aws]
+symbol = "☁️  "
+
+[conda]
+symbol = "🐍 "
+
+[memory_usage]
+symbol = "🧠 "
+
+[nix_shell]
+symbol = "⚙️ "
+
+[package]
+symbol = "📦 "
+
+[php]
+symbol = "🐘 "
+
+[ruby]
+symbol = "💎 "
+
+[scala]
+symbol = "🔷 "
+
+[java]
+symbol = "☕ "
+
+[julia]
+symbol = "🟣 "
+
+[shlvl]
+symbol = "⚡ "
+
+[swift]
+symbol = "🕊️ "
+
+[character]
+success_symbol = "💀"
+error_symbol = "✗"
+vicmd_symbol = "⚡"
+
+[cmd_duration]
+min_time = 4
+show_milliseconds = false
+disabled = false
+style = "bold italic red"

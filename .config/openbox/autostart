@@ -1,0 +1,16 @@
+# lxsession & # apenas usar quando for alterar sei lá 
+
+# fix bug betterlockscreen
+# xss-lock -- betterlockscreen -l &
+
+# Iniciar Polybar
+polybar emi-bar &
+
+# Iniciar nitrogen
+nitrogen --restore &
+
+# Iniciar picom
+picom --config ~/.config/picom/picom.conf &
+
+xcape -e 'Super_L=Alt_L|F1'
+
