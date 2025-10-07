@@ -50,7 +50,7 @@ install_step "Atualizando sistema..." "sudo pacman -Syu"
 install_step "Ínstalando dependências..." "sudo pacman -S --needed openbox nitrogen picom lxappearance polybar rofi tmux autorandr arandr pavucontrol neovim starship bat fzf xcape nemo networkmanager \
 	network-manager-applet lightdm lightdm-gtk-greeter xcape capitaine-cursors bash-completion ttf-firacode-nerd alacritty wmctrl \
 	noto-fonts-emoji noto-fonts noto-fonts-cjk noto-fonts-extra geany ttf-jetbrains-mono code pulseaudio pulseaudio-alsa pulseaudio-bluetooth \
-	xdotool"
+	xdotool maim rofi xclip dunst"
 
 install_step "Iniciando servidor de audio..." "systemctl --user enable --now pulseaudio.service"
 
