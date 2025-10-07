@@ -47,18 +47,23 @@ logo "Hello World"
 echo "${info_icon} ${BLD}${CYE}Iniciando instalação dos Dotfiles...${CNC}"
 
 install_step "Atualizando sistema..." "sudo pacman -Syu"
-install_step "Ínstalando dependências..." "sudo pacman -S --needed openbox nitrogen picom lxappearance polybar rofi autorandr arandr pavucontrol neovim starship bat fzf xcape nemo networkmanager \
+install_step "Ínstalando dependências..." "sudo pacman -S --needed openbox nitrogen picom lxappearance polybar rofi tmux autorandr arandr pavucontrol neovim starship bat fzf xcape nemo networkmanager \
 	network-manager-applet lightdm lightdm-gtk-greeter xcape capitaine-cursors bash-completion ttf-firacode-nerd alacritty wmctrl \
-	noto-fonts-emoji noto-fonts noto-fonts-cjk noto-fonts-extra geany ttf-jetbrains-mono code"
+	noto-fonts-emoji noto-fonts noto-fonts-cjk noto-fonts-extra geany ttf-jetbrains-mono code pulseaudio pulseaudio-alsa pulseaudio-bluetooth \
+	xdotool"
 
-# install_step "Instalando Yay..." " cd ~ ; git clone https://aur.archlinux.org/yay.git ; cd yay ; makepkg -si ; yay --version"
+install_step "Iniciando servidor de audio..." "systemctl --user enable --now pulseaudio.service"
 
-install_step "Instalando dependências Yay..." "yay -S --needed brave-bin papirus-icon-theme tokyonight-gtk-theme-git ttf-jetbrains-mono-nerd ttf-material-design-icons-git ttf-font-awesome ; fc-cache -fv"
+install_step "Instalando Yay..." " cd ~ ; git clone https://aur.archlinux.org/yay.git ; cd yay ; makepkg -si ; yay --version"
+
+install_step "Instalando dependências Yay..." "yay -S --needed brave-bin papirus-icon-theme tokyonight-gtk-theme-git ttf-jetbrains-mono-nerd ttf-material-design-icons-git ttf-font-awesome nerd-fonts \
+				betterlockscreen; fc-cache -fv"
 
 install_step "Iniciando sessao do lightdm..." "sudo systemctl enable lightdm.service ; sudo systemctl start lightdm.service"
 install_step "Iniciando sessão NetworkManager..." "sudo systemctl enable --now NetworkManager"
 
 install_step "Copiando arquivos de configuração..." "cp -v -r .config/* ~/.config ; cp -v -r wallpapers ~/"
+install_step "Copiando arquivos de temas..." "cp -v -r themes/* ~/.themes"
 install_step "Copiando configuração .bashrc" "cp -v .bashrc ~/.bashrc"
 install_step "Copiando configuração .gtkrc-2.0" "cp -v .gtkrc-2.0 ~/.gtkrc-2.0"
 

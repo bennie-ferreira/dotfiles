@@ -3,6 +3,9 @@
 # fix bug betterlockscreen
 # xss-lock -- betterlockscreen -l &
 
+# NetworkManager
+nm-applet &
+
 # Iniciar Polybar
 polybar emi-bar &
 
